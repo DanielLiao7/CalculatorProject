@@ -47,7 +47,7 @@ public class Operations {
      */
     public String log(String base) {
 
-        return expression + base;
+        return "log_base(" + expression + "," + base + ")";
     }
 
     public String evaluate() {
@@ -61,11 +61,12 @@ public class Operations {
         params.add(DoubleEvaluator.NEGATE);
         params.add(DoubleEvaluator.LOG);
         params.add(DoubleEvaluator.EXPONENT);
+        params.add(ExtendedDoubleEvaluator.LOG_BASE);
 
         // Add the default expression brackets
         params.addExpressionBracket(BracketPair.PARENTHESES);
 
-        DoubleEvaluator evaluator = new DoubleEvaluator(params);
+        ExtendedDoubleEvaluator evaluator = new ExtendedDoubleEvaluator(params);
     
         return doIt(evaluator, expression);
     }
