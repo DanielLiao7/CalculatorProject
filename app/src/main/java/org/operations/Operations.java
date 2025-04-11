@@ -2,10 +2,6 @@ package org.operations;
 
 import org.exceptions.EvaluationException;
 
-import com.fathzer.soft.javaluator.BracketPair;
-import com.fathzer.soft.javaluator.DoubleEvaluator;
-import com.fathzer.soft.javaluator.Parameters;
-
 public class Operations {
 
     public String expression = "";
@@ -54,21 +50,6 @@ public class Operations {
     }
 
     public String evaluate() {
-        Parameters params = new Parameters();
-
-        // Add the supported operators to these parameters
-        params.add(DoubleEvaluator.PLUS);
-        params.add(DoubleEvaluator.MINUS);
-        params.add(DoubleEvaluator.MULTIPLY);
-        params.add(DoubleEvaluator.DIVIDE);
-        params.add(DoubleEvaluator.NEGATE);
-        params.add(DoubleEvaluator.LOG);
-        params.add(DoubleEvaluator.EXPONENT);
-        params.add(ExtendedDoubleEvaluator.LOG_BASE);
-
-        // Add the default expression brackets
-        params.addExpressionBracket(BracketPair.PARENTHESES);
-
         ExtendedDoubleEvaluator evaluator = new ExtendedDoubleEvaluator();
     
         return doIt(evaluator, expression);
@@ -76,7 +57,6 @@ public class Operations {
 
     private static String doIt(ExtendedDoubleEvaluator evaluator, String expression) throws EvaluationException 
     {
-        System.out.println (expression+" = "+new ExtendedDoubleEvaluator().evaluate(expression));
-        return new ExtendedDoubleEvaluator().evaluate(expression).toString();
+        return evaluator.evaluate(expression).toString();
     }
 }

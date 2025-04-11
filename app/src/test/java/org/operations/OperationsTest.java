@@ -13,6 +13,6 @@ public class OperationsTest {
         classUnderTest.log("2");
         String output = classUnderTest.evaluate();
 
-        assertEquals("3.32192809489", output);
+        assertEquals("3.3219280948873626", output);
     }
 }

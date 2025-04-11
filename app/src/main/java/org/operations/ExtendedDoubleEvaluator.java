@@ -30,7 +30,7 @@ public class ExtendedDoubleEvaluator extends DoubleEvaluator {
 		super(parameters);
 	}
 
-    private static double customLog(double base, double logNumber) {
+    private static double customLog(double logNumber, double base) {
         return Math.log(logNumber) / Math.log(base);
     }
     
