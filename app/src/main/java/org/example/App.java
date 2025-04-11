@@ -3,6 +3,9 @@
  */
 package org.example;
 
+// https://github.com/fathzer/javaluator?tab=readme-ov-file
+import com.fathzer.soft.javaluator.DoubleEvaluator;
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
