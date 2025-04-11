@@ -19,6 +19,7 @@ public class ExtendedDoubleEvaluator extends DoubleEvaluator {
         PARAMS = DoubleEvaluator.getDefaultParameters();
         // add the new sqrt function to these parameters
         PARAMS.add(SQRT);
+        PARAMS.add(LOG_BASE);
     }
     
     public ExtendedDoubleEvaluator() {

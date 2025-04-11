@@ -8,7 +8,10 @@ import com.fathzer.soft.javaluator.Parameters;
 
 public class Operations {
 
-    public String expression;
+    public String expression = "";
+
+    public Operations() {
+    }
 
     public Operations(String newExpression) {
         expression = newExpression;
@@ -45,9 +48,9 @@ public class Operations {
     /** 
      * @param String base the exponent operator value
      */
-    public String log(String base) {
+    public void log(String base) {
 
-        return "log_base(" + expression + "," + base + ")";
+        expression = "log_base(" + expression + "," + base + ")";
     }
 
     public String evaluate() {
@@ -66,13 +69,14 @@ public class Operations {
         // Add the default expression brackets
         params.addExpressionBracket(BracketPair.PARENTHESES);
 
-        ExtendedDoubleEvaluator evaluator = new ExtendedDoubleEvaluator(params);
+        ExtendedDoubleEvaluator evaluator = new ExtendedDoubleEvaluator();
     
         return doIt(evaluator, expression);
     }
 
-    private static String doIt(DoubleEvaluator evaluator, String expression) throws EvaluationException 
+    private static String doIt(ExtendedDoubleEvaluator evaluator, String expression) throws EvaluationException 
     {
-        return expression + " = " + evaluator.evaluate(expression);
+        System.out.println (expression+" = "+new ExtendedDoubleEvaluator().evaluate(expression));
+        return new ExtendedDoubleEvaluator().evaluate(expression).toString();
     }
 }
