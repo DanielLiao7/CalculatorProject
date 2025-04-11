@@ -25,7 +25,7 @@ Develop a graphical simple graphical calulator with proper error handing
 
  - Use Java AWT library for GUI operations
  - Extends the base java.lang.Exception class to produce custom error handling
- - exp4j for Math library
+ - Math library
  - To support intuitive input we will
    - power/log functions will resolve itself once the next operator is selected
  - use Gradle for deps management
